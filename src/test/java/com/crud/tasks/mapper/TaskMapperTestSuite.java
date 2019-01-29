@@ -10,7 +10,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class TaskMapperSuite {
+public class TaskMapperTestSuite {
     @Test
     public void mapToTaskTest() {
         //Given
