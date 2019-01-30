@@ -2,13 +2,11 @@ package com.crud.tasks.trello.validator;
 
 import com.crud.tasks.domain.TrelloBoard;
 import com.crud.tasks.domain.TrelloCard;
-import com.crud.tasks.domain.TrelloCardDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
@@ -28,7 +26,7 @@ public class TrelloValidator {
         List<TrelloBoard> filteredBoards = trelloBoards.stream()
                 .filter(trelloBoard -> !trelloBoard.getName().equalsIgnoreCase("test"))
                 .collect(toList());
-        LOGGER.info("Boards have been filtered. Current list size: ", filteredBoards.size());
+        LOGGER.info("Boards have been filtered. Current list size: " + filteredBoards.size());
         return filteredBoards;
     }
 }
