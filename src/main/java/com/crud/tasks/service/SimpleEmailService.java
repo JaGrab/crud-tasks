@@ -26,7 +26,7 @@ public class SimpleEmailService {
             LOGGER.error("Fail to process email sending: ", e.getMessage(), e);
         }
     }
-    private MimeMessagePreparator createMimeMessage(final Mail mail, final MailCreator mailCreator) {
+    protected MimeMessagePreparator createMimeMessage(final Mail mail, final MailCreator mailCreator) {
         return mimeMessage -> {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
             messageHelper.setTo(mail.getMailTo());
