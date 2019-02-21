@@ -1,6 +1,7 @@
 package com.crud.tasks.repository;
 
 import com.crud.tasks.domain.Task;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -20,4 +21,6 @@ public interface TaskRepository extends CrudRepository<Task, Long> {
     void deleteById(Long id);
     @Override
     long count();
+    @Query
+    List<Task> retrieveLastThreeTasks();
 }

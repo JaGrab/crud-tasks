@@ -9,6 +9,11 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@NamedNativeQuery(
+        name = "Task.retrieveLastThreeTasks",
+        query = "SELECT * FROM TASKS ORDER BY ID DESC LIMIT 3",
+        resultClass = Task.class
+)
 @Entity(name = "tasks")
 public class Task {
     @Id
